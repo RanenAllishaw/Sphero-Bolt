@@ -1,7 +1,7 @@
 // Programmer: Ranen Allishaw
 // Date: 02.06.2023
 // Project: Sphero Bolt Testing
-// Version: 1.2
+// Version: 1.3
 // Bolt: 183F
 
 
@@ -10,12 +10,8 @@
  * LED turns to Maroon
  * Forward fo 2 seconds at 60 speed
 */
-async function helloWorld() {
- await speak("Hello World!", true);
- setMainLed({ r: 202, g: 29, b: 79});
- setSpeed(60);
- await delay (2);
- setSpeed(0);
+async function elloMmmmmmoto() {
+ await speak("Ello,,,,,,                                   MMMMMMoto!", true);
 }
 
 
@@ -27,7 +23,7 @@ async function helloWorld() {
 async function ninetyDegree() {
 	await roll((getHeading() + 0), 600, 1.25); // Heading 0 degrees at 600 speed for 1.25 seconds
 	await delay(1);
-	await roll((getHeading() + 270), 300, 2); // heading 90 degrees at 300 speed for 2 seconds
+	await roll((getHeading() + 95), 900, 4); // heading 90 degrees at 300 speed for 2 seconds
 }
 
 
@@ -35,8 +31,10 @@ async function ninetyDegree() {
  * startProgram function sends the program to your Sphero Bolt
 */
 async function startProgram() {
+	setMainLed({ r: 40, g: 5, b: 5});
+	await Sound.Animal.Monkey.play(true)
 	await ninetyDegree() // This is calling the ninetyDegree function so that it will run
-	await helloWorld() // This is calling the helloWorld function so that it will run
+	await elloMmmmmmoto() // This is calling the helloWorld function so that it will run
 }
 
 
