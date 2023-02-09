@@ -1,13 +1,17 @@
 // Programmer: Ranen Allishaw
 // Date: 02.06.2023
 // Project: Sphero Bolt Testing
-// Version: 1.1
+// Version: 1.2
 // Bolt: 183F
 
 
-// Hello World Program
+/**
+ * Hello World Practice Program
+ * LED turns to Maroon
+ * Forward fo 2 seconds at 60 speed
+*/
 async function helloWorld() {
- await speak("Hello", true);
+ await speak("Hello World!", true);
  setMainLed({ r: 202, g: 29, b: 79});
  setSpeed(60);
  await delay (2);
@@ -17,13 +21,13 @@ async function helloWorld() {
 
 /**
  * ninetyDegree function goes forward for a specified amount of time and speed
- * pausing, turning 90degrees clockwise then moving forward for a specific amount
+ * pausing, turning 90 degrees clockwise then moving forward for a specific amount
  * of speed and time
 */
 async function ninetyDegree() {
-	await roll((getHeading() + 0), 600, 2); // Heading 0 degrees at 60 speed for 4 seconds
+	await roll((getHeading() + 0), 600, 1.25); // Heading 0 degrees at 600 speed for 1.25 seconds
 	await delay(1);
-	await roll((getHeading() + 270), 300, 2); // heading 90 degrees at 60 speed for 4 seconds
+	await roll((getHeading() + 270), 300, 2); // heading 90 degrees at 300 speed for 2 seconds
 }
 
 
@@ -32,7 +36,8 @@ async function ninetyDegree() {
 */
 async function startProgram() {
 	await ninetyDegree() // This is calling the ninetyDegree function so that it will run
-	await helloWorld()
+	await helloWorld() // This is calling the helloWorld function so that it will run
 }
+
 
 // End :D
