@@ -2,7 +2,7 @@
 Programming Team: Ranen Allishaw & Kyle Rocco
 Date: FEB.13.2023
 Project: Labyrinth Competition
-Version: 1.3
+Version: 2.4
 Bolt: 183F
 */
 
@@ -15,11 +15,24 @@ Bolt: 183F
 */
 async function CheckpointBLUE() {
   await scrollMatrixText('START', { r: 255, g: 255, b: 255 }, 30, true);
-  await roll(0, 77.5, 2);
-  await spin(90, 1);
+  await roll(0, 78.5, 2);
+  await spin(90, 2.5);
   setMainLed({ r: 0, g: 0, b: 255 })
+}
+
+
+/**
+ *
+*/
+async function CheckpointNoise_1(){
+  await roll(90, 64, 1.5);
+  await delay(2);
+  await roll(180, 59, 1);
+  await spin(42.5, 2.5);
+  await Sound.Animal.Monkey.play();
 }
 
 async function startProgram() {
 await CheckpointBLUE(); // Calls CheckpointBLUE
+await CheckpointNoise_1();
 }
