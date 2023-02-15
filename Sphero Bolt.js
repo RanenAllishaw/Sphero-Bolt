@@ -2,7 +2,7 @@
 Programming Team: Ranen Allishaw & Kyle Rocco
 Date: FEB.13.2023
 Project: Labyrinth Competition
-Version: 4.1
+Version: 4.5
 Bolt: 183F
 */
 
@@ -25,7 +25,7 @@ async function CheckpointBLUE() {
  *
 */
 async function CheckpointNoise_1(){
-  await roll(90, 70, 1.5);
+  await roll(90, 69.5, 1.5);
   await delay(2);
   await roll(180, 65, 1);
   await spin(42.5, 2.5);
@@ -37,10 +37,11 @@ async function CheckpointNoise_1(){
  *
 */
 async function CheckpointRED() {
-	await roll(217.5, 54, 1.5);
+	await roll(217.5, 56.75, 1.5);
 	await delay(2);
-	await roll(132.5, 40.5, 1.1);
+	await roll(132.5, 41, 1.1);
 	setMainLed({ r: 255, g: 0, b: 0})
+	await delay(2);
 }
 
 
@@ -48,12 +49,23 @@ async function CheckpointRED() {
  *
 */
 async function CheckpointNoise_2() {
-	await roll(42.5, 55, 1.5);
+	await roll(42.5, 55.75, 1.5);
 	await delay(1.5);
 	await roll(130, 40.5, 1.75);
 	await Sound.Animal.Monkey.play();
 }
 
+
+/**
+ *
+*/
+async function CheckpointGREEN() {
+	await delay(1.5);
+	await roll(180, 43.75, 1);
+	await delay(1.5);
+	await roll(89.5, 41, 1.1);
+	setMainLed({ r: 0, g: 255, b: 0})
+}
 
 
 /**
@@ -64,4 +76,6 @@ async function startProgram() {
 	await CheckpointNoise_1();
 	await CheckpointRED();
 	await CheckpointNoise_2();
+	await CheckpointGREEN();
+
 }
