@@ -21,9 +21,7 @@ async function CheckpointBLUE() {
 }
 
 
-/**
- *
-*/
+// Below is the code for the first Noise Checkpoint
 async function CheckpointNoise_1(){
   await roll(90, 68, 1.5);
   await delay(2);
@@ -33,9 +31,7 @@ async function CheckpointNoise_1(){
 }
 
 
-/**
- *
-*/
+// Below is the code for the first colour Checkpoint, RED
 async function CheckpointRED() {
     await roll(217.5, 56.1, 1.5);
     await delay(2);
@@ -45,9 +41,7 @@ async function CheckpointRED() {
 }
 
 
-/**
- *
-*/
+// Below is the code for the second Noise Checkpoint
 async function CheckpointNoise_2() {
     await roll(42.5, 55.75, 1.5);
     await delay(1.5);
@@ -56,9 +50,7 @@ async function CheckpointNoise_2() {
 }
 
 
-/**
- *
-*/
+// Below is the code for the second colour Checkpoint, GREEN
 async function CheckpointGREEN() {
     await delay(1.5);
     await roll(180, 43.5, 1);
@@ -69,9 +61,7 @@ async function CheckpointGREEN() {
 }
 
 
-/**
- *
-*/
+// Below is the code for the final Noise Checkpoint
 async function CheckpointNoise_3() {
     await roll(89.5, 40, 1.1);
     await delay(2);
@@ -83,9 +73,7 @@ async function CheckpointNoise_3() {
 }
 
 
-/**
- *
-*/
+// Below is the code for the final colour Checkpoint, PURPLE
 async function CheckpointPURPLE() {
 	await roll(0, 60, 1.5);
 	setMainLed({ r: 40, g: 0, b: 255})
@@ -95,7 +83,9 @@ async function CheckpointPURPLE() {
 
 
 /**
- *
+ * Below is the funciton that calls all the other funcitons, because of such
+ * the funciton startProgram acts differently than a regular funciton because
+ * you don't have to call it beacuse it calls itself.
 */
 async function startProgram() {
     await CheckpointBLUE(); // Calls CheckpointBLUE
